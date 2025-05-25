@@ -6,6 +6,9 @@ librerias de pandas para resolver las preguntas.
 """
 
 
+import pandas as pd
+
+
 def pregunta_06():
     """
     Retorne una lista con los valores unicos de la columna `c4` del archivo
@@ -13,5 +16,7 @@ def pregunta_06():
 
     Rta/
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
-
     """
+    table = pd.read_csv('files/input/tbl1.tsv', sep='\t')
+    unique_values = table.c4.unique()
+    return sorted([value.upper() for value in unique_values])
